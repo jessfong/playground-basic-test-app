@@ -53,7 +53,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   expandedElement: any;
   isSearching = true;
   dataSource = new MatTableDataSource<PatientResource>();
-  displayedColumns = ['name', 'gender', 'age', 'birthDate', 'status', 'generalPractitioner',
+  displayedColumns = ['photo', 'name', 'gender', 'age', 'birthDate', 'status', 'generalPractitioner',
     'deathDate', 'maritalStatus', 'phone', 'email', 'fax', 'address'];
   responseTime = 0;
   isExpansionDetailRow: any;
@@ -143,6 +143,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       patient.resource.phone = this.getPhoneNumbers(patient);
       patient.resource.email = this.getEmails(patient);
       patient.resource.fax = this.getFaxes(patient);
+      patient.resource.photoUrl = this.getPhotoUrl(patient);
     }
 
     return data.entry.map(e => e.resource);
@@ -300,6 +301,21 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     return this.searchForm.valid && !this.isSearching && (name || birthDate);
   }
+
+  /**
+   * Gets patient photo
+   * @param patient - retrieved patient
+   * @returns photo url
+   */
+  getPhotoUrl(patient: Patient): string  {
+    if (patient.resource?.photo?.url) {
+      return patient.resource.photo.url;
+    }
+
+    if (patient.resource?.photo?.data) {
+      return patient.resource.photo.data;
+    }
+
+    return 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png';
+  }
 }
-
-

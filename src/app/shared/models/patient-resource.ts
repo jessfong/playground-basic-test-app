@@ -2,6 +2,7 @@ import { Address } from './address';
 import { Name } from './name';
 import { GeneralPractitioner } from './general-practitioner';
 import { Telecom } from './telecom';
+import { Photo } from './photo';
 
 export class PatientResource {
     id: string;
@@ -16,6 +17,7 @@ export class PatientResource {
     telecom: Telecom[];
     generalPractitioner: GeneralPractitioner[];
     martialStatus: string[];
+    photo: Photo;
 
     // Properties defined later
     fullAddress: string[];
@@ -27,4 +29,5 @@ export class PatientResource {
     phone: Telecom[];
     email: Telecom[];
     fax: Telecom[];
+    photoUrl: string;
 }
