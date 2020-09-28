@@ -1,0 +1,42 @@
+.toolbar-text {
+  font-size: 50px;
+}
+.table-container {
+  padding: 25px;
+  overflow: auto;
+}
+table {
+  width: 100%;
+}
+.footer td {
+  color: gray;
+  text-align: right;
+}
+.form-container {
+  padding-bottom: 10px;
+}
+.form-container mat-form-field {
+  margin-right: 8px;
+}
+table {
+  width: 100%;
+}
+tr.expand-detail-row {
+  height: 0;
+}
+tr.expand-element-row:not(.expand-expanded-row):hover {
+  background: whitesmoke;
+}
+tr.expand-element-row:not(.expand-expanded-row):active {
+  background: #efefef;
+}
+.expand-element-row td {
+  border-bottom-width: 0;
+}
+.expand-element-detail {
+  overflow: auto !important;
+  max-width: 1000px;
+}
+.capitalize {
+  text-transform: capitalize;
+}
